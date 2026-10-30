@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>شروحات</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+ box-sizing: border-box;
+}
+
+:root {
+  --page-bg: #F5DCB7;
+  --nav-bg: #164E63;
+  --text-color: #172F38;
+  --card-hover: #FFF5E6;
+  --card-width: 230px;
+  --card-height: 70px;
+  --grid-gap: 22px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--page-bg);
+  color: var(--text-color);
+  font-family: "Noto Naskh Arabic", serif;
+  min-height: 100vh;
+}
+
+nav {
+  border-top: 3px solid var(--nav-bg);
+  border-bottom: 1px solid #fff;
+  padding: 10px 25px;
+  background-color: var(--nav-bg);
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  min-height: 50px;
+  list-style: none;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links img {
+  display: block;
+  width: auto;
+  height: 40px;
+  object-fit: contain;
+}
+
+.nav-links a {
+  display: block;
+  padding: 8px 12px;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Noto Naskh Arabic", serif;
+  font-size: 15px;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--page-bg);
+  text-decoration: underline;
+}
+
+.nav-links a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+.container {
+  width: min(100%, 1100px);
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+h1 {
+  margin: 0 auto;
+  padding: 5px 0 12px;
+  text-align: center;
+  color: #111;
+  font-family: "Noto Naskh Arabic", serif;
+  font-size: clamp(21px, 2vw, 27px);
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  justify-items: center;
+  align-items: stretch;
+  gap: var(--grid-gap);
+
+  width: 100%;
+  max-width: 850px;
+  margin: 14px auto 35px;
+}
+
+
+.grid > :last-child:nth-child(3n + 1) {
+  grid-column: 2;
+}
+
+.grid > :nth-last-child(2):nth-child(3n + 1) {
+  grid-column: 1;
+}
+
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: 100%;
+  max-width: var(--card-width);
+  min-height: var(--card-height);
+  padding: 12px;
+
+  background-color: var(--nav-bg);
+  border: 1px solid rgba(22, 78, 99, 0.15);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(22, 78, 99, 0.06);
+
+  color: #fff;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.card:hover {
+  background-color: var(--card-hover);
+  border-color: var(--nav-bg);
+  color: var(--nav-bg);
+  box-shadow: 0 5px 12px rgba(22, 78, 99, 0.12);
+  transform: translateY(-3px);
+}
+
+.card:focus-visible {
+  outline: 3px solid var(--nav-bg);
+  outline-offset: 3px;
+}
+
+
+.icon {
+  display: block;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.card:hover .icon {
+  transform: scale(1.06);
+}
+@media (max-width: 800px) {
+  :root {
+    --grid-gap: 18px;
+    --card-height: 66px;
+  }
+
+  .container {
+    padding-inline: 16px;
+  }
+
+  .grid {
+    max-width: 650px;
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 550px) {
+  :root {
+    --grid-gap: 12px;
+    --card-height: 62px;
+  }
+
+  nav {
+    padding: 8px 12px;
+  }
+
+  .nav-links {
+    gap: 8px;
+    flex-wrap: wrap;
+    min-height: 42px;
+  }
+
+  .nav-links img {
+    height: 32px;
+  }
+
+  .nav-links a {
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+
+  .container {
+    padding-inline: 12px;
+  }
+
+  h1 {
+    padding: 10px 0;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 440px;
+    margin-top: 10px;
+  }
+
+  .grid > :last-child:nth-child(3n + 1),
+  .grid > :nth-last-child(2):nth-child(3n + 1) {
+    grid-column: auto;
+  }
+
+  .card {
+    gap: 6px;
+    min-height: var(--card-height);
+    padding: 8px 5px;
+    border-radius: 9px;
+    font-size: 14px;
+  }
+
+  .icon {
+    flex-basis: 32px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .card span {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 350px) {
+  .container {
+    padding-inline: 8px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 260px;
+    gap: 10px;
+  }
+
+  .card {
+    max-width: 240px;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .card,
+  .icon,
+  .nav-links a {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<ul class="nav-links">
+<li><img src="png/wad.png" alt="logo"></li>
+<li><a href="homeopen.html">الصفحة الرئيسية</a></li>
+<li><a href="explineopen.html"> شروحات </a></li>
+<li><a href="pdelopen.html">بدائل</a></li>
+<li><a href="abutopen.html" > من نحن </a></li>
+</ul>
+</nav>
+
+
+    <main class="container">
+
+    <h1>التوزيعات المبنية على توزيعات أخرى لا تُحسب في قسم خاص</h1>
+
+   <section class="grid" id="systemList">
+      <a class="card" href="dstor/Debian/homeDebian.html">
+        <img class="icon" src="png/debian.webp" alt="">
+        <span>Debian</span>
+      </a>
+
+      <a class="card" href="dstor/chromeiumOS/homeChromeiumOS.html">
+        <img class="icon" src="png/Chromium_Logo.svg.webp" alt="">
+        <span>ChromiumOS</span>
+      </a>
+
+      <a class="card" href="dstor/fedore/homeFedora.html">
+        <img class="icon" src="png/fedora.webp" alt="">
+        <span>Fedora</span>
+      </a>
+
+      <a class="card" href="dstor/arch/homeArch.html">
+        <img class="icon" src="png/arch-linux.webp" alt="">
+        <span>Arch</span>
+      </a>
+<a class="card" href="dstor/openSUSE/homeopenSUSE.html">
+<img class="icon" src="png/opensuse.webp" alt="">
+<span>openSUSE</span>
+</a>
+<a class="card" href="dstor/nixos/homeNixos.html">
+<img class="icon" src="png/nixos.png" alt="">
+<span>NixOS</span>
+</a>
+<a class="card" href="dstor/gentoo/homeGentoo.html">
+<img class="icon" src="png/gentoo.webp" alt="">
+<span>gentoo</span>
+</a>
+<a class="card" href="dstor/alpeine/alpineHome.html">
+<img class="icon" src="png/alpine-linux.webp" alt="">
+<span>alpine</span>
+</a>
+<a class="card" href="dstor/voidOFlinux/voidHome.html">
+<img class="icon" src="png/voidlinux.png" alt="">
+<span>void</span>
+
+</a>
+</section>
+</main>
+<p> اذا في  نظام تبي تظيفه كلم شالوت</p>
+
+</body>
+</html>
