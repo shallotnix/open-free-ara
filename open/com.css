@@ -1,0 +1,15 @@
+pre {
+  background: #090914;
+  color: #c5c5d0;
+  border: 1px solid #30303d;
+  border-radius: 6px;
+  padding: 15px;
+  font: 16px/1.4 monospace;
+  white-space: pre-wrap;
+  direction: ltr;
+  text-align: left;
+  overflow-x: auto;
+  max-width: 100%;
+  line-height: 1.6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
