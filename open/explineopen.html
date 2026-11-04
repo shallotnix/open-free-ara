@@ -302,68 +302,75 @@ h1 {
 
 
 </style>
+<link id="themeLink" rel="stylesheet" href="old.css">
 
 </head>
 
 <body>
-
 <nav>
-<ul class="nav-links">
-<li><img src="png/wad.png" alt="logo"></li>
-<li><a href="homeopen.html">الصفحة الرئيسية</a></li>
-<li><a href="explineopen.html"> شروحات </a></li>
-<li><a href="pdelopen.html">بدائل</a></li>
-<li><a href="abutopen.html" > من نحن </a></li>
-</ul>
+  <ul class="nav-links">
+    <li><img src="png/wad.png" alt="شعار الموقع"></li>
+    <li><a href="homeopen.html">الصفحة الرئيسية</a></li>
+    <li><a href="explineopen.html" aria-current="page">شروحات</a></li>
+    <li><a href="pdelopen.html">بدائل</a></li>
+    <li><a href="abutopen.html">من نحن</a></li>
+    <li><a href="loveOpen.html" > شروط مساهمة </a></li>
+    <li>
+      <button id="themeToggle" type="button" aria-label="تبديل الوضع" onclick="toggleTheme()">
+        <img src="png/sun.png" alt="" class="theme-icon">
+      </button>
+    </li>
+  </ul>
 </nav>
-
-
-    <main class="container">
-
-    <h1>التوزيعات المبنية على توزيعات أخرى لا تُحسب في قسم خاص</h1>
-
-<section class="grid" id="systemList">
-<a class="card" href="dstor/Debian/homeDebian.html">
-<img class="icon" src="png/debian.webp" alt="">
-<span>Debian</span>
-</a>
-<a class="card" href="dstor/chromeiumOS/homeChromeiumOS.html">
-<img class="icon" src="png/Chromium_Logo.svg.webp" alt="">
-<span>ChromiumOS</span>
-</a>
-<a class="card" href="dstor/fedore/homeFedora.html">
-<img class="icon" src="png/fedora.webp" alt="">
-<span>Fedora</span>
-</a>
-
-<a class="card" href="dstor/arch/homeArch.html">
-<img class="icon" src="png/arch-linux.webp" alt="">
-<span>Arch</span>
-</a>
-<a class="card" href="dstor/openSUSE/homeopenSUSE.html">
-<img class="icon" src="png/opensuse.webp" alt="">
-<span>openSUSE</span>
-</a>
-<a class="card" href="dstor/nixos/homeNixos.html">
-<img class="icon" src="png/nixos.png" alt="">
-<span>NixOS</span>
-</a>
-<a class="card" href="dstor/gentoo/homeGentoo.html">
-<img class="icon" src="png/gentoo.webp" alt="">
-<span>gentoo</span>
-</a>
-<a class="card" href="dstor/alpeine/alpineHome.html">
-<img class="icon" src="png/alpine-linux.webp" alt="">
-<span>alpine</span>
-</a>
-<a class="card" href="dstor/voidOFlinux/voidHome.html">
-<img class="icon" src="png/voidlinux.png" alt="">
-<span>void</span>
-</a>
-<a class="card" href="dstor/tools/">
-</section>
-</main>
-<p> اذا في  نظام تبي تظيفه كلم شالوت</p>
 <script src="theme.js"></script>
+
+<main class="container">
+  <h1>التوزيعات المبنية على توزيعات أخرى لا تُحسب في قسم خاص</h1>
+
+  <section class="grid" id="systemList">
+    <a class="card" href="dstor/Debian/homeDebian.html">
+      <img class="icon" src="png/debian.webp" alt="">
+      <span>Debian</span>
+    </a>
+    <a class="card" href="dstor/chromeiumOS/homeChromeiumOS.html">
+      <img class="icon" src="png/Chromium_Logo.svg.webp" alt="">
+      <span>ChromiumOS</span>
+    </a>
+    <a class="card" href="dstor/fedore/homeFedora.html">
+      <img class="icon" src="png/fedora.webp" alt="">
+      <span>Fedora</span>
+    </a>
+
+    <a class="card" href="dstor/arch/homeArch.html">
+      <img class="icon" src="png/arch-linux.webp" alt="">
+      <span>Arch</span>
+    </a>
+    <a class="card" href="dstor/openSUSE/homeopenSUSE.html">
+      <img class="icon" src="png/opensuse.webp" alt="">
+      <span>openSUSE</span>
+    </a>
+    <a class="card" href="dstor/nixos/homeNixos.html">
+      <img class="icon" src="png/nixos.png" alt="">
+      <span>NixOS</span>
+    </a>
+    <a class="card" href="dstor/gentoo/homeGentoo.html">
+      <img class="icon" src="png/gentoo.webp" alt="">
+      <span>gentoo</span>
+    </a>
+    <a class="card" href="dstor/alpeine/alpineHome.html">
+      <img class="icon" src="png/alpine-linux.webp" alt="">
+      <span>Alpine</span>
+    </a>
+    <a class="card" href="dstor/voidOFlinux/voidHome.html">
+      <img class="icon" src="png/voidlinux.png" alt="">
+      <span>Void</span>
+    </a>
+    <a class="card" href="dstor/tools/tools.html">
+      <span>أدوات</span>
+    </a>
+  </section>
+
+  <p style="text-align:center;margin-top:-18px;color:var(--text-color);font-size:15px;">إذا كان لديك نظام تريد إضافته، تواصل مع شالوت.</p>
+</main>
 </body>
 </html>

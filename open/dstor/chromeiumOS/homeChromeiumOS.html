@@ -3,20 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>صفحتي</title>
-  <link rel="stylesheet" href="../../but.css">
-  <link rel="stylesheet" href="../../com.css">
+  <title>الصفحة الرئيسية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+<link id="themeLink" rel="stylesheet" href="../../but.css">
 </head>
 <body>
+
 <nav>
 <ul class="nav-links">
-<li><img src="./wad.png" alt="logo"></li>
-<li><a href="../../homeopen.html">الصفحة الرئيسية</a></li>
-<li><a href="../../explineopen.html"> شروحات </a></li>
-<li><a href="../../pdelopen.html">بدائل</a></li>
-<li><a href="../../abutopen.html" > من نحن </a></li>
+  <li><img src="../../png/wad.png" alt="شعار واد النصي، مكتوب عليه اسم واد النصي"></li>
+  <li><a href="../../homeopen.html">الصفحة الرئيسية</a></li>
+  <li><a href="../../explineopen.html"> شروحات </a></li>
+  <li><a href="../../pdelopen.html">بدائل</a></li>
+  <li><a href="../../abutopen.html"> من نحن </a></li>
+  <li><a href="../../loveOpen.html"> شروط مساهمة </a></li>
+  <li><button id="themeToggle" type="button" aria-label="تبديل الوضع" onclick="toggleTheme()"><img src="../../png/sun.png" alt="" class="theme-icon"></button></li>
+</ul>
 </nav>
-<h1> لا تنسى ذكر الله</h1>
+<main class="page-container">
+<h1>Chromeium OS</h1>
+<section class="guide-grid">
+<a href="chromeiumOSInstall/installChromeiumOS.html">تثبيت  Chromeium OS</a>
+</section>
+</main>
 <script src="../../theme.js"></script>
 </body>
 </html>

@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --page-bg: #f5dcb7;
+  --nav-bg: #164e63;
+  --text-color: #172f38;
+  --card-bg: #fff5e6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--page-bg);
+  color: var(--text-color);
+  font-family: "Noto Naskh Arabic", serif;
+}
+
+nav {
+  border-top: 3px solid var(--nav-bg);
+  border-bottom: 1px solid #fff;
+  padding: 10px 25px;
+  background: var(--nav-bg);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  min-height: 50px;
+  list-style: none;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links img {
+  width: auto;
+  height: 40px;
+  object-fit: contain;
+}
+
+.nav-links a {
+  display: block;
+  padding: 8px 12px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--page-bg);
+  text-decoration: underline;
+}
+
+.nav-links #themeToggle {
+  padding: 4px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.nav-links #themeToggle .theme-icon {
+  height: 24px;
+}
+
+.page-container {
+  width: min(100% - 32px, 900px);
+  margin-inline: auto;
+  padding-block: 28px 40px;
+  text-align: center;
+}
+
+.page-container h1 {
+  margin-bottom: 24px;
+  font-size: clamp(24px, 3vw, 32px);
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.guide-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 76px;
+  padding: 14px;
+  border: 1px solid rgba(22, 78, 99, 0.15);
+  border-radius: 10px;
+  background: var(--nav-bg);
+  box-shadow: 0 2px 5px rgba(22, 78, 99, 0.06);
+  color: #fff;
+  font-size: 20px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.guide-card:hover {
+  transform: translateY(-3px);
+  background: var(--card-bg);
+  color: var(--nav-bg);
+}
+
+@media (max-width: 550px) {
+  nav {
+    padding: 8px 12px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 8px;
+    min-height: 42px;
+  }
+
+  .nav-links img {
+    height: 32px;
+  }
+
+  .nav-links a {
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+}

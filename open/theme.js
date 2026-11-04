@@ -1,25 +1,40 @@
 function switchTheme(themeFile) {
-const themeLink = document.getElementById('themeLink');
-if (themeLink) {
-themeLink.setAttribute('href', themeFile);
+  const themeLink = document.getElementById('themeLink');
+  if (themeLink) {
+    themeLink.setAttribute('href', getSiteUrl(themeFile));
+  }
 }
+
+function getSiteUrl(fileName) {
+  const script = document.currentScript || document.querySelector('script[src$="theme.js"]');
+  return new URL(fileName, script.src).href;
 }
-function setThemeLabel(isDarkMode) {
-const themeToggle = document.getElementById('themeToggle');
-if (themeToggle) { themeToggle.setAttribute('aria-label', isDarkMode ? 'الوضع الفاتح' : 'الوضع الداكن');
-}
+
+function setThemeIcon(themeIcon, isDarkMode) {
+  if (!themeIcon) {
+    return;
+  }
+
+  themeIcon.src = getSiteUrl(isDarkMode ? 'png/Cmoon.png' : 'png/sun.png');
+  themeIcon.closest('#themeToggle').setAttribute(
+    'aria-label',
+    isDarkMode ? 'الوضع الداكن نشط' : 'الوضع الفاتح نشط'
+  );
 }
 
 function toggleTheme() {
-const isDarkMode = localStorage.getItem('darkMode') !== 'true';
-switchTheme(isDarkMode ? 'but.css' : 'old.css');
-localStorage.setItem('darkMode', String(isDarkMode));
-setThemeLabel(isDarkMode);
+  const isDarkMode = localStorage.getItem('darkMode') !== 'true';
+  const themeIcon = document.querySelector('.theme-icon');
+
+  switchTheme(isDarkMode ? 'but.css' : 'old.css');
+  setThemeIcon(themeIcon, isDarkMode);
+  localStorage.setItem('darkMode', String(isDarkMode));
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-const storedTheme = localStorage.getItem('darkMode');
-const isDarkMode = storedTheme === null ? true : storedTheme === 'true';
-switchTheme(isDarkMode ? 'but.css' : 'old.css');
-setThemeLabel(isDarkMode);
+  const isDarkMode = localStorage.getItem('darkMode') === 'true';
+  const themeIcon = document.querySelector('.theme-icon');
+
+  switchTheme(isDarkMode ? 'but.css' : 'old.css');
+  setThemeIcon(themeIcon, isDarkMode);
 });
